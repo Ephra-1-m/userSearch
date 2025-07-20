@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Search</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+    
+    </style>
+</head>
+
+<body>
+    <div class="search-box">
+        <div class="input-group">
+            <input type="text" id="nameInput" placeholder="Enter a name..." class="animated-field">
+            <button onclick="searchProfiles()" class="animated-field">Search</button>
+        </div>
+    </div>
+
+    <script>
+        function searchProfiles() {
+            const name = document.getElementById('nameInput').value.trim();
+            if (!name) return alert('Please enter a name.');
+
+            const encodedName = encodeURIComponent(name);
+
+            const urls = [
+                `https://www.facebook.com/search/top?q=${encodedName}`,
+                `https://www.instagram.com/${encodedName}`,
+                `https://www.tiktok.com/search?q=${encodedName}`,
+                `https://www.snapchat.com/add/${encodedName}`,
+                `https://twitter.com/search?q=${encodedName}`,
+                `https://www.google.com/search?q=site:tinder.com "${encodedName}"`,
+                `https://www.google.com/search?q=site:bumble.com "${encodedName}"`
+            ];
+
+            urls.forEach(url => window.open(url, '_blank'));
+        }
+    </script>
+</body>
+
+</html>
