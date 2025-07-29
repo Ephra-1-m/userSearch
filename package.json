@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "trying to see if chatgpt can create a webscraper to look for people across every social media and dating app",
   "main": "index.js",
+  "scripts": {
+    "start": "node backEnd/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+},
   "dependencies": {
     "accepts": "^2.0.0",
     "agent-base": "^7.1.4",
@@ -160,9 +164,6 @@
     "yargs-parser": "^21.1.1",
     "yauzl": "^2.10.0",
     "zod": "^3.25.76"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
